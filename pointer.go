@@ -17,7 +17,6 @@ func main() {
 	// 指针数组
 	n := [4]int{1, 2, 3, 4}
 	var i int
-	// var j int
 	var pointer [MAX]*int
 	for i = 0; i < MAX; i++ {
 		pointer[i] = &n[i]
@@ -25,4 +24,27 @@ func main() {
 		fmt.Printf("n[%d]的地址：%x\n", i, pointer[i])
 		fmt.Printf("*pointer[%d]的值： %d\n", i , *pointer[i])
 	}
+
+	// 指向指针的指针
+	var m int
+	var p *int
+	var pp **int
+	m = 2
+	p = &m
+	pp = &p
+	fmt.Printf("*p的值：%d\n", *p)
+	fmt.Printf("*pp的值：%x\n", *pp)
+	fmt.Printf("*pp的值: %d\n", **pp)
+
+	// 指针作为函数参数
+	u := 66
+	v := 88
+	change(&u, &v)
+	fmt.Printf("交换后u: %d, 交换后v: %d\n", u, v)
+}
+func change(u, v *int) {
+	var temp int
+	temp = *u
+	*u = *v
+	*v = temp
 }
