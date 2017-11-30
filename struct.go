@@ -1,27 +1,39 @@
 package main
-
 import "fmt"
 
-type Rectangle struct {
-	length int
-	width int
+type student struct {
+	name string
+	sex string
+	major string
+	id int
 }
-type Circle struct {
-	radius float64
+type books struct {
+	title string
+	id int
+	author string
+}
+func main() {
+	var first student
+	first.name = "first"
+	first.sex = "male"
+	first.major = "computer"
+	first.id = 1
+	second := student{"second", "female", "math", 2}
+	fmt.Printf("second的姓名，性别，专业，学号分别是： %s, %s, %s, %d\n", second.name, second.sex, second.major, second.id)
+	fmt.Printf("first的姓名，性别，专业，学号分别是： %s, %s, %s, %d\n", first.name, first.sex, first.major, first.id)
+	
+	something := books{"计算机基础", 666, "不知道谁"}
+	showbook(something)
+
+	another := books{"计算机系统", 888, "还是不知道"}
+	bookspointer(&another)
 }
 
-func main() {
-	var r1 Rectangle
-	var c1 Circle
-	c1.radius = 2
-	r1.length = 4
-	r1.width = 2
-	fmt.Println("长方形的面积是：", r1.getArea())
-	fmt.Println("圆形的面积是：", c1.CircleArea())
+func showbook(book books) {
+	fmt.Printf("这本书的名字，编号，作者分别是：%s, %d, %s\n", book.title, book.id, book.author)
 }
-func (r Rectangle) getArea() int {
-	return r.length * r.width
-}
-func (c Circle) CircleArea() float64 {
-	return 3.14 * c.radius * c.radius
+
+// 结构体指针
+func bookspointer(book *books) {
+	fmt.Printf("另一本书的名字，编号，作者分别是： %s, %d, %s\n", book.title, book.id, book.author)
 }
