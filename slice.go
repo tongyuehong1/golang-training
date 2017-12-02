@@ -23,8 +23,6 @@ func main() {
 	try := cut[1:6]
 	print(try)
 
-
-
 	// append() 和 copy() 函数
 	var animal []int
 	print(animal)
