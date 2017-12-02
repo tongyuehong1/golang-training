@@ -27,6 +27,17 @@ func main() {
 
 	another := books{"计算机系统", 888, "还是不知道"}
 	bookspointer(&another)
+
+
+	example := []struct {
+		computer string
+		num int
+	}{
+		{"a", 1},
+		{"b", 2},
+		{"c", 3},
+	}
+	fmt.Println("computer的example(struct)是：", example)
 }
 
 func showbook(book books) {
