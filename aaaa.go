@@ -10,7 +10,7 @@ func Pic(dx, dy int) [][]uint8 {
 	   fmt.Println("a:",a)
 	   for j = 0; j < dx; j++ {
 				a[i][j] = uint8(i*j)
-			// fmt.Println("aaaaa:", a[i][j])
+			fmt.Println("aaaaa:", a[i][j])
 		}
 	}
 	return a
