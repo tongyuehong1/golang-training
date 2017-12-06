@@ -5,7 +5,7 @@ import (
 
 func nonBlocked() {
 	ch := make(chan int, 1)
-	// ch <- 0
+	ch <- 0
 	select {
 	case <- ch :
 		fmt.Println("[nonBlock]:从通道中读数")
@@ -42,4 +42,5 @@ func General() chan <- int {
 func main() {
 	nonBlocked()
 	General()
+	// Block()
 }
