@@ -11,8 +11,14 @@ func getSequence() func() int {
 	 }
 }
 
+func add() int{
+  i := 0
+  i+=1
+  // fmt.Println(i)
+  return i
+}
 func main(){
-   nextNumber := getSequence()  
+   nextNumber := getSequence()
 
    fmt.Println(nextNumber())
    fmt.Println(nextNumber())
