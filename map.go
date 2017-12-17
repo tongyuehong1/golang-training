@@ -35,7 +35,7 @@ func main() {
 	}else{
 		fmt.Println("not exits")
 	}
-	// 增删改
+	增删改
 	student["Lucy"] = "female"
 	fmt.Println("Lucy is", student["Lucy"])
 	delete(student, "Li")
