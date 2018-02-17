@@ -12,7 +12,6 @@ type client struct {
 	// send is a channel on which messages are sent.
 	send chan []byte
 
-	// room is the room this client is chatting in.
 	room *room
 }
 
