@@ -1,17 +1,19 @@
 package main
+
 import "fmt"
 
 type student struct {
-	name string
-	sex string
+	name  string
+	sex   string
 	major string
-	id int
+	id    int
 }
 type books struct {
-	title string
-	id int
+	title  string
+	id     int
 	author string
 }
+
 func main() {
 	var first student
 	first.name = "first"
@@ -21,17 +23,16 @@ func main() {
 	second := student{"second", "female", "math", 2}
 	fmt.Printf("second的姓名，性别，专业，学号分别是： %s, %s, %s, %d\n", second.name, second.sex, second.major, second.id)
 	fmt.Printf("first的姓名，性别，专业，学号分别是： %s, %s, %s, %d\n", first.name, first.sex, first.major, first.id)
-	
+
 	something := books{"计算机基础", 666, "不知道谁"}
 	showbook(something)
 
 	another := books{"计算机系统", 888, "还是不知道"}
 	bookspointer(&another)
 
-
 	example := []struct {
 		computer string
-		num int
+		num      int
 	}{
 		{"a", 1},
 		{"b", 2},

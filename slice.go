@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-  "strings"
+	"strings"
 )
 
 func main() {
-	num := make([]int,3,5)
-	a := [] int {1, 2, 3}
+	num := make([]int, 3, 5)
+	a := []int{1, 2, 3}
 	print(num)
 	print(a)
 
@@ -17,7 +17,7 @@ func main() {
 		fmt.Printf("这是个空的切片\n")
 	}
 
-	var cut = []int{1, 2, 3, 4, 5, 6 ,7, 8}
+	var cut = []int{1, 2, 3, 4, 5, 6, 7, 8}
 	fmt.Printf("cut: %d\n", cut)
 	fmt.Printf("cut中从索引1(包含) 到索引4(不包含):%d\n", cut[1:4])
 	fmt.Println("cut无下限:", cut[:5])
@@ -33,7 +33,7 @@ func main() {
 	print(animal)
 	animal = append(animal, 1)
 	print(animal)
-	animal = append(animal, 2,3,3)
+	animal = append(animal, 2, 3, 3)
 	print(animal)
 	// 创建切片是之前切片的两倍容量
 	live := make([]int, len(animal), (cap(animal))*2)
@@ -60,9 +60,9 @@ func main() {
 		fmt.Printf("%s\n", board)
 	}
 	for i := 0; i < len(board); i++ {
-		fmt.Printf("%s\n",strings.Join(board[i], " "))
+		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
 }
 func print(a []int) {
-	fmt.Printf("len=%d cap=%d slice=%v\n",len(a),cap(a),a)
+	fmt.Printf("len=%d cap=%d slice=%v\n", len(a), cap(a), a)
 }

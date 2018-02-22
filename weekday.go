@@ -9,7 +9,7 @@ func main() {
 	fmt.Println("When's Friday?")
 	today := time.Now().Weekday()
 	fmt.Println("Today is", today)
-	fmt.Println("Tomorrow is", today+1)	
+	fmt.Println("Tomorrow is", today+1)
 	switch time.Friday {
 	case today + 0:
 		fmt.Println("Today.")

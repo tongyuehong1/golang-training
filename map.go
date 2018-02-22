@@ -1,10 +1,13 @@
 package main
+
 import "fmt"
 
-type some struct{
-	big,small int
+type some struct {
+	big, small int
 }
+
 var m map[string]some
+
 func main() {
 	m = make(map[string]some)
 	m["first second"] = some{
@@ -14,7 +17,7 @@ func main() {
 	var n = map[string]some{
 		"a b": {66, 88},
 		"h k": {666, 888},
-		"g": {55, 99},
+		"g":   {55, 99},
 	}
 	fmt.Println(n)
 	fmt.Println(m)
@@ -26,13 +29,13 @@ func main() {
 	student["Li"] = "male"
 	student["Susan"] = "female"
 	fmt.Println(student)
-	for name :=range student {
-		fmt.Println(name, "is", student[name] )
+	for name := range student {
+		fmt.Println(name, "is", student[name])
 	}
 	sex, ok := student["Lucy"]
-	if(ok) {
+	if ok {
 		fmt.Println("Lucy is", sex)
-	}else{
+	} else {
 		fmt.Println("not exits")
 	}
 	// 增删改

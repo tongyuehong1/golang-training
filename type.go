@@ -4,7 +4,7 @@ import "fmt"
 
 type Rectangle struct {
 	length int
-	width int
+	width  int
 }
 type Circle struct {
 	radius float64

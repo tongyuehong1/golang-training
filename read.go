@@ -1,10 +1,12 @@
 package main
+
 import (
 	"fmt"
 	"io"
 	"strings"
 )
-func main(){
+
+func main() {
 	r := strings.NewReader("Hello, I'm Lily")
 
 	b := make([]byte, 6)

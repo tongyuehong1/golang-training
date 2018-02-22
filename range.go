@@ -1,10 +1,11 @@
 package main
+
 import "fmt"
 
 func main() {
 	num := []int{2, 3, 4}
 	sum := 0
-	for _,num := range num {
+	for _, num := range num {
 		sum += num
 	}
 	fmt.Printf("sum: %d\n", sum)

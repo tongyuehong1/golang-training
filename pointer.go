@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 const MAX int = 4
+
 func main() {
 	var a int = 10
 	var ip *int
@@ -22,7 +23,7 @@ func main() {
 		pointer[i] = &n[i]
 		fmt.Printf("n[%d]的地址：%x\n", i, &n[i])
 		fmt.Printf("n[%d]的地址：%x\n", i, pointer[i])
-		fmt.Printf("*pointer[%d]的值： %d\n", i , *pointer[i])
+		fmt.Printf("*pointer[%d]的值： %d\n", i, *pointer[i])
 	}
 
 	// 指向指针的指针
