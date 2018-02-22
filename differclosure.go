@@ -7,7 +7,7 @@ func main() {
 	a := []int{1, 2, 3}
 	for _, i = range a{
 		fmt.Println(i)
-		defer some(i)
+		defer display(i)
 	}
 
 	// 闭包, 输出结果是4，5，6，（defer后）6，6，6
@@ -20,7 +20,7 @@ func main() {
 		}()
 	}
 }
-func some(i int) {
+func display(i int) {
 	fmt.Println(i)
 }
 

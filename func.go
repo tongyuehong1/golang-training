@@ -24,7 +24,7 @@ func keep(x, y int) int{
 	return temp
 }
 // 引用传递，调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
-func change(x, y *int) {
+func exchange(x, y *int) {
 	var temp int
 	temp = *x
 	*x = *y
