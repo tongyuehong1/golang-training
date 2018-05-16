@@ -1,30 +1,35 @@
 package main
+
 import (
 	"fmt"
 	// "math"
 )
 
-type sum interface{
+type sum interface {
 	sum()
 }
-type show interface{
+type show interface {
 	student()
 }
 type Myint struct {
 	x int
 	y int
 }
-func (n Myint) sum() int{
+
+func (n Myint) sum() int {
 	return n.x + n.y
 }
+
 type any struct {
 	name string
-	age int
+	age  int
 }
-func (a *any) student(){
+
+func (a *any) student() {
 	fmt.Println("a.name, a.age:", a.name, a.age)
 }
-func main(){
+
+func main() {
 	num := Myint{1, 2}
 	people := any{"Li", 20}
 	people.student()
