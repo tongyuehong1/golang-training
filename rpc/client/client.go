@@ -51,8 +51,10 @@ func main() {
 	if err != nil {
 		logger.Logger.Error("dialing:", err)
 	}
+
 	num := Num{4, 5}
 	var reply struct{}
+
 	err = client.Call("Send.Show", num, &reply)
 	if err != nil {
 		logger.Logger.Error("print", err)

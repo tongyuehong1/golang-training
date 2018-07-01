@@ -33,6 +33,7 @@ import (
 	"fmt"
 
 	"github.com/360EntSecGroup-Skylar/excelize"
+	"github.com/tongyuehong1/golang-training/log"
 )
 
 
@@ -53,9 +54,12 @@ type Student struct {
 
 func main() {
 	var stu Student
-	xlsx, err := excelize.OpenFile("/Users/a5/Documents/Book1.xlsx")
+	xlsx, err := excelize.OpenFile("/Users/a5/Documents/Book.xlsx")
 	if err != nil {
-		fmt.Println(err)
+		//fmt.Println(err)
+		for i := 0; i< 5; i ++{
+			log.Error(fmt.Sprintf("example: %v", err))
+		}
 		return
 	}
 
@@ -74,5 +78,6 @@ func main() {
 			stu.Address = row[8]
 			fmt.Println(stu)
 		}
+		fmt.Println(stu)
 	}
 }

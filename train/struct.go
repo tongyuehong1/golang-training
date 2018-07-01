@@ -1,27 +1,52 @@
 package main
+
 import (
 	"fmt"
-	"math"
 )
-type first struct{
-	x float64
-	y float64
+
+type third struct {
+	m int
 }
-type second struct{
-	name string
-	sex string
+
+type appender interface {
+	change() int
 }
-func (one first) num() float64{
-	return math.Sqrt(one.x * one.x + one.y * one.y)
+
+func (this *third) change() int{
+	this.m = 2
+	return this.m
 }
-func (student second) people() (string,string){
-	student.name = "Susan"
-	student.sex = "female"
-	return student.name, student.sex
-} 
+
+func (this third) write() string {
+	return fmt.Sprint(this.m)
+}
+
+func (this third) orchange() {
+	this.m = 2
+}
+
+func count(a appender) {
+	a.change()
+}
 func main() {
-	a := first{3, 4}
-	fmt.Println(a.num())
-	var people second
-	fmt.Println(people.people())
+	// 指针方法和值方法都可以在指针或非指针上被调用
+	var thing third
+	thing.change()
+	fmt.Println(thing.write())
+
+	some := new(third)
+	some.change()
+	fmt.Println(some.write())
+
+	//在普通的值类型上定义的方法不能改变接受者的数据
+	thing.orchange()
+	// 输出依旧为1
+	fmt.Println(thing.write())
+
+	count(some)
+	fmt.Println(some.m)
+
+
+	// 接口变量中存储的具体值是不可寻址的，所以
+	// count(thing)
 }

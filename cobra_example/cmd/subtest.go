@@ -20,8 +20,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var a bool
-var aaa bool
+var long bool
+var short bool
 
 // subtestCmd represents the subtest command
 var subtestCmd = &cobra.Command{
@@ -29,12 +29,12 @@ var subtestCmd = &cobra.Command{
 	Short: "A subcommand example",
 	Long: "Subtest is a test application for subcommand",
 	Run: func(cmd *cobra.Command, args []string) {
-		if aaa {
-			fmt.Println(123456789)
+		if long {
+			fmt.Println("long text")
 		}
 
-		if a {
-			fmt.Println(1111111)
+		if short {
+			fmt.Println("short text")
 		}
 		fmt.Println("subtest called")
 	},
@@ -51,6 +51,6 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	 subtestCmd.Flags().BoolVarP(&aaa, "ta", "t", false, "An example for using flags")
-	 subtestCmd.Flags().BoolVar(&a, "s", true, "short" )
+	 subtestCmd.Flags().BoolVarP(&long, "long", "l", false, "An example for using flags")
+	 subtestCmd.Flags().BoolVar(&short, "short", true, "short" )
 }

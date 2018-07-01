@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 func counter(start int) (func() int, func()){

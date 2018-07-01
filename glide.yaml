@@ -1,0 +1,28 @@
+package: github.com/tongyuehong1/golang-training
+import:
+- package: github.com/360EntSecGroup-Skylar/excelize
+  version: ^1.3.0
+- package: github.com/gorilla/websocket
+  version: ^1.2.0
+- package: github.com/nsqio/go-nsq
+  version: ^1.0.7
+- package: github.com/spf13/cobra
+  version: ^0.0.3
+- package: github.com/tongyuehong1/golang-project
+  subpackages:
+  - libs/logger
+- package: go.uber.org/zap
+  version: ^1.8.0
+  subpackages:
+  - zapcore
+- package: gopkg.in/natefinch/lumberjack.v2
+  version: ^2.1.0
+testImport:
+- package: github.com/mattermost/mattermost-server
+  version: ^4.10.0
+  subpackages:
+  - mlog
+- package: github.com/stretchr/testify
+  version: ^1.2.1
+  subpackages:
+  - require

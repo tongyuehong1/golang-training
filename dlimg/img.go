@@ -10,10 +10,10 @@ import(
 )
 
 func main() {
-	res, _ := http.Get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVH-yO39lxFdyDzqQbBM9WOlyv35tEUXetUf4N_zeQbEVfWai0")
+	res, _ := http.Get("https://upload-images.jianshu.io/upload_images/11043-b203aff690e35cfc.png")
 	defer res.Body.Close()
 
-	name := "./image/a.jpg"
+	name := "./image/http.jpg"
 	out, err := os.Create(name)
 	if err != nil {
 		fmt.Println("creat error", err)
